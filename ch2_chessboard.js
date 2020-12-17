@@ -1,5 +1,5 @@
-// let gridHeight = 10;
-// let gridWidth = 10;
+// let gridHeight = 7;
+// let gridWidth = 7;
 
 // for(let i = 0; i < gridHeight; i++) {
 //     let gridStr = "";
