@@ -1,0 +1,20 @@
+<p style="font-size: 10px">🎈</p>
+
+<script>
+    let fontSize = 10;
+
+    function inflateOrDeflate(event) {
+        
+        if(event.key == "ArrowUp") {
+            fontSize *= 1.1;
+            let para = document.getElementsByTagName("p")[0];
+            para.style.fontSize = fontSize + "px";
+        } else if (event.key == "ArrowDown") {
+            fontSize *= 0.9;
+            let para = document.getElementsByTagName("p")[0];
+            para.style.fontSize = fontSize + "px";
+        }
+    }
+
+    window.addEventListener("keydown", inflateOrDeflate);
+</script>
