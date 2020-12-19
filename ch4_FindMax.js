@@ -19,10 +19,8 @@ function findMaxAndIndex(numArr) {
             maxIndex = i;
         }
     }
-
     return { max: maxNum, index: maxIndex};
 }
 
 console.log(findMax([12, 35, 6]));
-
 console.log(findMaxAndIndex([12, 35, 6]));
