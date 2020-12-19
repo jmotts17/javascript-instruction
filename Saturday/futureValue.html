@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Value</title>
+    <script>
+        function calculateFutureValue(initInvest, monthlyInvest, annualInterestRate, months) {
+            let futureValue = initInvest;
+            for (let i = 1; i <= months; i++) {
+                futureValue = (futureValue + monthlyInvest) * (1 + annualInterestRate / 12 / 100);
+            }
+
+            return futureValue.toFixed(2);
+        }
+
+        function calculate() {
+            let initInvest = parseFloat(document.getElementById("initInvest").value);
+            let monthlyInvest = parseFloat(document.getElementById("monthlyInvest").value);
+            let intRate = parseFloat(document.getElementById("intRate").value);
+            let years = parseFloat(document.getElementById("numYears").value);
+            let months = years * 12;
+            let futureValue = calculateFutureValue(initInvest, monthlyInvest, intRate, months);
+            let output = document.getElementById("output");
+            output.innerHTML = futureValue;
+            addRowToTable(initInvest, monthlyInvest, intRate, years, futureValue);
+        }
+
+        function addTdToRow(row, tdText) {
+            let td = document.createElement("td");
+            td.innerText = tdText;
+            row.appendChild(td);
+        }
+
+        let table = document.createElement("table");
+        
+        function addRowToTable(initInvest, monthlyInvest, intRate, years, futureValue) {
+            let row = document.createElement("tr");
+            addTdToRow(row, initInvest);
+            addTdToRow(row, monthlyInvest);
+            addTdToRow(row, intRate);
+            addTdToRow(row, years);
+            addTdToRow(row, futureValue);
+
+            table.appendChild(row);
+            document.getElementById("history").appendChild(table);
+        }
+    </script>
+</head>
+<body>
+    Initial Value: <input type="number" id="initInvest"><br>
+    Monthly Investment: <input type="number" id="monthlyInvest"><br>
+    Annual Interest Rate: <input type="number" id="intRate"><br>
+    Number of Years: <input type="number" id="numYears"><br>
+    <button onclick="calculate()">Calculate</button><br>
+    Future Value: $<span id="output"></span><br><br>
+    History:<br>
+    <b>Init Month APR Num Years Future Value</b>
+    <div id="history"></div>
+</body>
+</html>
