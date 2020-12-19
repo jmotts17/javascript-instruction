@@ -1,5 +1,5 @@
 function findMax(numArr) {
-    let maxNum = 0;
+    let maxNum = -Infinity;
 
     for(let i = 0; i < numArr.length; i++) {
         if(numArr[i] > maxNum) {
@@ -10,7 +10,7 @@ function findMax(numArr) {
 }
 
 function findMaxAndIndex(numArr) {
-    let maxNum = 0;
+    let maxNum = -Infinity;
     let maxIndex = 0;
 
     for(let i = 0; i < numArr.length; i++) {
