@@ -4,6 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Future Value</title>
+    <style>
+        * {
+            background-color: #d4d4d2;
+            color: #1c1c1c;
+        }
+        h1 {
+            color: #1c1c1c;
+        }
+        #container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            margin-left: 2rem;
+        }
+        button {
+            border: #1c1c1c 2px solid;
+            color: #1c1c1c;
+            background-color: #505050;
+            font-weight: bold;
+        }
+        button:hover {
+            color: #ff9500;
+            border-color: #ff9500;
+        }
+    </style>
     <script>
         function calculateFutureValue(initInvest, monthlyInvest, annualInterestRate, months) {
             let futureValue = initInvest;
@@ -48,14 +73,19 @@
     </script>
 </head>
 <body>
-    Initial Value: <input type="number" id="initInvest"><br>
-    Monthly Investment: <input type="number" id="monthlyInvest"><br>
-    Annual Interest Rate: <input type="number" id="intRate"><br>
-    Number of Years: <input type="number" id="numYears"><br>
-    <button onclick="calculate()">Calculate</button><br>
-    Future Value: $<span id="output"></span><br><br>
-    History:<br>
-    <b>Init Month APR Num Years Future Value</b>
-    <div id="history"></div>
+    <div id="container">
+        <h1>Future Value Calculator</h1>
+        <p>
+        <b>Initial Value:</b> <input type="number" id="initInvest"><br>
+        <b>Monthly Investment:</b> <input type="number" id="monthlyInvest"><br>
+        <b>Annual Interest Rate:</b> <input type="number" id="intRate"><br>
+        <b>Number of Years:</b> <input type="number" id="numYears"><br>
+        <button onclick="calculate()">Calculate</button><br>
+        <b>Future Value:</b> $<span id="output"></span><br><br>
+        </p>
+        <b>History:</b>
+        <b>Init Month APR Num Years Future Value</b>
+        <div id="history"></div>
+    </div>
 </body>
 </html>
