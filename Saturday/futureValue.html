@@ -26,6 +26,7 @@
             width: 5%;
         }
     </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         function calculateFutureValue(initInvest, monthlyInvest, annualInterestRate, months) {
             let futureValue = initInvest;
@@ -37,7 +38,8 @@
         }
 
         function calculate() {
-            let initInvest = parseFloat(document.getElementById("initInvest").value);
+            //let initInvest = parseFloat(document.getElementById("initInvest").value);
+            let initInvest = parseFloat($("#initInvest").val());
             let monthlyInvest = parseFloat(document.getElementById("monthlyInvest").value);
             let intRate = parseFloat(document.getElementById("intRate").value);
             let years = parseFloat(document.getElementById("numYears").value);
@@ -76,7 +78,7 @@
         <label for="intRate" class="col">Annual Interest Rate:</b> <input type="number" id="intRate"></label>
         <label for="numYears" class="col">Number of Years:</b> <input type="number" id="numYears"></label>
         <button class="btn btn-primary" onclick="calculate()">Calculate</button><br>
-        <b>Future Value:</b><span id="output"></span><br><br>
+        <b>Future Value:</b><span id="output"></span><br>
         <b>History:</b>
         <table class="table">
             <thead>
